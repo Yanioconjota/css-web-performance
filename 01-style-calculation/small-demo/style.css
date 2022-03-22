@@ -1,0 +1,20 @@
+body {
+    font-size: 16px;
+}
+p {
+    font-weight: bold;
+}
+p span {
+    display: none;
+    color: #03a9f4;
+}
+
+p:before {
+    content: 'Welcome'
+}
+
+img {
+    float: left;
+}
+
+
