@@ -12,3 +12,7 @@
 @import './custom/scrollbar';
 @import './custom/sidebar';
 @import './custom/universal';
+
+body * {
+  will-change: transform;
+}

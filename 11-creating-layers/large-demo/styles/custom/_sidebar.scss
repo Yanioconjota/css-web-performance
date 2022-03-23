@@ -5,6 +5,7 @@
   transform: translateX(0);
   position: absolute;
   transition: 1s;
+  will-change: transform;
 }
 
 .sidebar.is-open {

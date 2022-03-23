@@ -4,10 +4,11 @@
   width: 450px;
   position: absolute;
   transition: 1s;
+  transform: translateX(0);
 }
 
 .sidebar.is-open {
-  left: 0;
+  transform: translateX(450px);
 }
 
 
