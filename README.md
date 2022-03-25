@@ -20,7 +20,7 @@
 
 ----
 
-Optimizing web performance and critical rendering path
+The critical rendering path
 ======================================================
 
 The critical rendering path is the reference of steps the browser goes to convert HTML, CSS, and JavaScript into pixels on the screen.
@@ -102,9 +102,6 @@ Having a DOM is not enough to know what the page would look like. That's the res
 Finally, they are linked into a tree structure known as the CSS object model. While the DOM contains all the content of the page. The CSS object model contains all the styles of the page. In this example for the body element the font size is defined. Paragraph extends font size from the parent and has some on properties. There is a pseudo element. Span extends some properties and defines unique color and display property. And also, there is an image selector. The next part of the process is to combine the document object model and CSS object model. It does selector matching first. The second part of the process involves taking all the style rules from the matching selectors and figuring out what final styles the element has. As a result, we get a new tree - the render tree. The render tree looks pretty similar to the DOM tree. Except, something is missing. For example, the html and the head elements. In fact, every element with display none property, will be removed from the render tree. Elements with display none should not be rendered. So, there is no reason for them to exist in the render tree. Only visible elements exist in the render tree. Equally, when you have a visible pseudo element, it will be added to the render tree, even if it doesn't live in the DOM. There is no DOM element with this content. It's a pseudo element that came from CSS object model. It's important to note that only those elements that will actually be displayed on the screen, will exist in the render tree.
 
 ![image011](http://janioisacura.com/pics/owp/image011.png)
-
-Summary
-=======
 
 Here is a quick recap of the browser steps. Browser engine is parsing HTML markup and builds the DOM tree. It also parses CSS markup and builds that CSS Object Model tree. It combines the DOM and CSS object model into a render tree. Next, it runs layout to compute the geometry of each node. Layout triggers paint. At the end, it composites those layers. There is a whole pipeline that browser runs.
 
